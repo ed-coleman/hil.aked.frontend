@@ -60,18 +60,17 @@ export default function HomePage() {
     <Title className='header' align='left'>Friend's of Israel: The Backlash against Palestine Solidarity</Title>
     <Paper  className='bio' radius='lg' shadow="sm" p="xl" >
     <Grid justify='center' align-content='center' gutter='xl'>
-      <Grid.Col md={6} lg={4}>
-      <Image maw={550} width={550} height={550} mx="auto" radius="md" src='src/assets/images/Friends of Israel_mockup.jpg' alt="Random image" />
+      <Grid.Col sm={9} md={6} lg={4}>
+      <Image maw={400} width={400} height={400} mx="auto" radius="md" src='/images/Friends of Israel_mockup.jpg' alt="Random image" />
       </Grid.Col>
-      <Grid.Col md={0} lg={2}></Grid.Col>
-      <Grid.Col sm={9} md={6} lg={6}>
+      <Grid.Col md={6} lg={6}>
       <Paper shadow="xs" p="lg">
       <Blockquote cite="– Arun Kundnani, author of The Muslims Are Coming! and What Is Antiracism?" icon={null}>
       “Friends of Israel is a meticulous study of the organizations seeking to reverse widening support for the Palestinian cause in Britain. On a topic that is fraught with exaggeration, distortion, and propaganda, Aked proceeds with precision and nuance, giving us a much-needed, authoritative analysis. Grounded in anti-racism, Friends of Israel paints a complex picture of Zionism in Britain, giving readers the tools to oppose both anti-Semitism and Israeli apartheid.”
     </Blockquote>
     </Paper>
     <div id='availableNowBadgeContainer'>
-    <Paper id='availableNowBadge' radius='lg' shadow="sm" p="xl" >
+    <Paper id='availableNowBadge' radius='sm' shadow="sm" p="lg" >
     <a className='badgeLink' href='https://www.versobooks.com/en-gb/products/723-friends-of-israel'><Title order={3}>Available now in paperback and ebook</Title></a>
       <br></br>
       <a className='badgeLink' href='/friendsofisrael'><Title order={4}>Find out more</Title></a>
@@ -96,7 +95,7 @@ export default function HomePage() {
       <Grid.Col gutter='xl' md={1} lg={1}>
       </Grid.Col>
       <Grid.Col gutter='xl' md={6} lg={4}>
-      <Image maw={400} mx="auto" radius="sm" src='src/assets/images/Screenshot 2023-04-18 at 10.54.25.png' alt="Random image"/>
+      <Image maw={400} mx="auto" radius="sm" src='/images/Screenshot 2023-04-18 at 10.54.25.png' alt="Random image"/>
       </Grid.Col>
     </Grid>
     </Paper>

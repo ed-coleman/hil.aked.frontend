@@ -121,7 +121,7 @@ export default function FriendsPage() {
           maw={500}
           mx="auto"
           radius="md"
-          src="src/assets/images/Friends of Israel_mockup.jpg"
+          src="/images/Friends of Israel_mockup.jpg"
           alt="Random image"
         />
       </div>
