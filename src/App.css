@@ -222,6 +222,32 @@ div[role="alert"] {
   font-size: larger;
 }
 
+@media screen and (max-width: 992px) {
+ .carouselQuote {
+  font-size: medium;
+ }
+}
+
+@media screen and (max-width: 480px) {
+  .carouselQuote {
+   font-size: small;
+  }
+ }
+
+ @media screen and (max-width: 992px) {
+  #bookBlurb {
+   font-size: medium;
+  }
+ }
+
+ @media screen and (max-width: 480px) {
+  #bookBlurb {
+   font-size: small;
+  }
+ }
+
+
+
 #friendsPageBookContainer {
   margin-top: -50px;
   margin-bottom: -30px;

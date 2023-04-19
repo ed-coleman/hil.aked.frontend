@@ -11,14 +11,12 @@ import {
   Skeleton,
   Title,
   Text,
+  Box,
 } from "@mantine/core";
 import Autoplay from "embla-carousel-autoplay";
 import { Carousel } from "@mantine/carousel";
 
-
-
 export default function FriendsPage() {
-
   const autoplay = useRef(Autoplay({ delay: 6000 }));
 
   return (
@@ -26,21 +24,25 @@ export default function FriendsPage() {
       <Title className="header">
         Friend's of Israel: The Backlash against Palestine Solidarity
       </Title>
+
       <Carousel
-     plugins={[autoplay.current]}
-      onMouseEnter={autoplay.current.stop}
-      onMouseLeave={autoplay.current.reset}
+        id="carousel"
+        plugins={[autoplay.current]}
+        onMouseEnter={autoplay.current.stop}
+        onMouseLeave={autoplay.current.reset}
         maw={800}
         mx="auto"
-        height={320}
+        height={300}
         slideGap={"lg"}
         breakpoints={[
-          { maxWidth: "md", slideSize: "50%" },
+          { maxWidth: "md", slideSize: "100%" },
           { maxWidth: "sm", slideSize: "100%", slideGap: 0 },
+          { maxWidth: "xs", slideSize: "100%", slideGap: 0 },
         ]}
       >
         <Carousel.Slide>
-          <Blockquote className="carouselQuote"
+          <Blockquote
+            className="carouselQuote"
             cite="– Arun Kundnani, author of The Muslims Are Coming! and What Is Antiracism?"
             icon={null}
           >
@@ -55,7 +57,8 @@ export default function FriendsPage() {
           </Blockquote>
         </Carousel.Slide>
         <Carousel.Slide>
-          <Blockquote className="carouselQuote"
+          <Blockquote
+            className="carouselQuote"
             cite="- Yara Harawi, author of The Stone House "
             icon={null}
           >
@@ -71,7 +74,8 @@ export default function FriendsPage() {
           </Blockquote>
         </Carousel.Slide>
         <Carousel.Slide>
-          <Blockquote className="carouselQuote"
+          <Blockquote
+            className="carouselQuote"
             cite="- Aviah Sarah Day, co-author of Abolition Revolution"
             icon={null}
           >
@@ -85,7 +89,8 @@ export default function FriendsPage() {
           </Blockquote>
         </Carousel.Slide>
         <Carousel.Slide>
-          <Blockquote className="carouselQuote"
+          <Blockquote
+            className="carouselQuote"
             cite="- Ilan Pappe, author of Ten Myths About Israel"
             icon={null}
           >
@@ -98,7 +103,8 @@ export default function FriendsPage() {
           </Blockquote>
         </Carousel.Slide>
         <Carousel.Slide>
-          <Blockquote className="carouselQuote"
+          <Blockquote
+            className="carouselQuote"
             cite="- Nadine El-Nany, author of (B)ordering Britain"
             icon={null}
           >
@@ -114,11 +120,12 @@ export default function FriendsPage() {
           </Blockquote>
         </Carousel.Slide>
       </Carousel>
+      <br></br>
+
       <div id="friendsPageBookContainer">
         <Image
           width={500}
           height={500}
-          maw={500}
           mx="auto"
           radius="md"
           src="/images/Friends of Israel_mockup.jpg"
@@ -127,7 +134,7 @@ export default function FriendsPage() {
       </div>
       <br></br>
       <br></br>
-      <Paper className="bio" radius="sm" shadow="sm" p="xl">
+      <Paper id='bookBlurb' className="bio" radius="sm" shadow="sm" p="xl">
         <br></br>
         <Text>
           Friends of Israel: the Backlash against Palestine Solidarity provides
