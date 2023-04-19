@@ -230,7 +230,7 @@ div[role="alert"] {
 
 @media screen and (max-width: 480px) {
   .carouselQuote {
-   font-size: small;
+   font-size: smaller;
   }
  }
 
