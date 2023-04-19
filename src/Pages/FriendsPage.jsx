@@ -23,7 +23,7 @@ export default function FriendsPage() {
 
   return (
     <div className="friendShell">
-      <Title className="header" align="left">
+      <Title className="header">
         Friend's of Israel: The Backlash against Palestine Solidarity
       </Title>
       <Carousel
