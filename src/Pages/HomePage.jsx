@@ -57,7 +57,7 @@ export default function HomePage() {
     <div className="homeShell">
     <div className="sectionOne">
    
-    <Title className='header' align='left'>Friend's of Israel: The Backlash against Palestine Solidarity</Title>
+    <Title className='header' align='left'>Friends of Israel: The Backlash against Palestine Solidarity</Title>
     <Paper  className='bio' radius='lg' shadow="sm" p="xl" >
     <Grid justify='center' align-content='center' gutter='xl'>
       <Grid.Col sm={9} md={6} lg={4}>
