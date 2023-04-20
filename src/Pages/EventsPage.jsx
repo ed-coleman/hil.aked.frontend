@@ -12,7 +12,7 @@ export default function EventsPage() {
     const [events, setEvents] = useState([]);
     const fetchEvents = async () => {
       try {
-        const response = await fetch("http://localhost:5000/events");
+        const response = await fetch("https://hil-aked-backend.adaptable.app/events");
         const parsed = await response.json();
         setEvents(parsed);
         setIsLoading(false)
