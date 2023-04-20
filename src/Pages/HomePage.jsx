@@ -24,7 +24,7 @@ export default function HomePage() {
   const [events, setEvents] = useState([]);
   const fetchEvents = async () => {
     try {
-      const response = await fetch("/db/events");
+      const response = await fetch("'mongodb+srv://edcolemancode:soSqQiJTxeCxDQi3@hilakedcluster.ouivvbk.mongodb.net/test'/events");
       const parsed = await response.json();
       setEvents(parsed);
       setIsLoading(false);
