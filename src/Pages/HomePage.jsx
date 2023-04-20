@@ -52,7 +52,7 @@ export default function HomePage() {
  
 
   return isLoading ? (
-    <Title>Loading...</Title>
+    <Title order={2}>Loading...</Title>
   ) : (
     <div className="homeShell">
     <div className="sectionOne">

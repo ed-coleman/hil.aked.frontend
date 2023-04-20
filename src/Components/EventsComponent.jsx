@@ -41,7 +41,7 @@ export default function EventsComponent() {
 
 
   return isLoading ? (
-    <h1>Loading...</h1>
+    <Title order={2}>Loading...</Title>
   ):(
 
     events.length === 0 ? (
