@@ -24,7 +24,7 @@ export default function HomePage() {
   const [events, setEvents] = useState([]);
   const fetchEvents = async () => {
     try {
-      const response = await fetch("http://localhost:5000/events");
+      const response = await fetch("/db/events");
       const parsed = await response.json();
       setEvents(parsed);
       setIsLoading(false);
