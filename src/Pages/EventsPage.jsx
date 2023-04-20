@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, Text, useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Table, Button, Title } from '@mantine/core';
+import EventsComponent from '../Components/EventsComponent';
 
 
 export default function EventsPage() {
@@ -32,37 +33,15 @@ export default function EventsPage() {
         <tr key={event._id}>
             <td>{event.title}</td>
             <td>{event.location}</td>
-            <td>{event.date.getFullYear}</td>
+
         </tr>
     ))
 
     console.log(events.length)
 
 
-  return isLoading ? (
-    <h1>Loading...</h1>
-  ):(
-
-    events.length === 0 ? (
-      <Title order={2}>No upcoming events at the moment </Title>
-    ):(
- <>
-   <h1>Events</h1>
-   <h2>Upcoming</h2>
-   <Table>
-   
-    <thead>
-    
-        <tr>
-        </tr>
-    </thead>
-    <tbody>{rows}</tbody>
-   </Table>
-<br></br>
-
-<Button onClick={goBack}>Back</Button>
-    </>
+  return (
+    <EventsComponent />
+  )
  
-  )
-  )
 }
