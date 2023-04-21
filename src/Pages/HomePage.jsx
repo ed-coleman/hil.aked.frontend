@@ -102,7 +102,7 @@ export default function HomePage() {
     
       <Title className="header" align="left">Upcoming Events</Title>
       <br></br>
-      <EventsComponent></EventsComponent>
+      <EventsComponent />
       <br></br>
       <div className='badgeContainer'>
       <Paper id='availableNowBadge' radius='lg' shadow="sm" p="lg" >
