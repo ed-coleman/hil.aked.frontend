@@ -22,20 +22,9 @@ export default function HomePage() {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
   const [events, setEvents] = useState([]);
-  const fetchEvents = async () => {
-    try {
-      const response = await fetch("http://localhost:5000/events");
-      const parsed = await response.json();
-      setEvents(parsed);
-      setIsLoading(false);
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
-  useEffect(() => {
-    fetchEvents();
-  }, []);
+
+
 
   const goToEvents = () => {
     navigate('/events')
@@ -49,11 +38,8 @@ export default function HomePage() {
     navigate('/friendsofisrael')
   }
 
- 
+  return (
 
-  return isLoading ? (
-    <Title order={2}>Loading...</Title>
-  ) : (
     <div className="homeShell">
     <div className="sectionOne">
    
