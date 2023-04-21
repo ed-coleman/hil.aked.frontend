@@ -73,10 +73,11 @@ export default function HomePage() {
       <Grid.Col md={6} lg={6}>
       
     <Text>Hil Aked (they/them) is a writer, investigative researcher and activist with a background in political sociology whose work has appeared in the Guardian, Independent, Sky News and Al Jazeera, as well as volumes from Pluto Press and Zed Books/Bloomsbury. Their first book Friends of Israel: The Backlash Against Palestine Solidarity was published by Verso in 2023.</Text>
-    
+    <div id='availableNowBadgeContainer'>
     <Paper id='availableNowBadge' radius='lg' shadow="sm" p="lg" >
       <a className="badgeLink" href='/about'><Title order={3}>More Info</Title></a>
       </Paper>
+      </div>
       </Grid.Col>
       <Grid.Col gutter='xl' md={1} lg={1}>
       </Grid.Col>
@@ -93,8 +94,6 @@ export default function HomePage() {
       <div className='badgeContainer'>
       <Paper id='availableNowBadge' radius='lg' shadow="sm" p="lg" >
       <a className='badgeLink' href='/events'><Title order={3}>More Events</Title></a>
-      <br></br>
-      <a className='badgeLink' href='/events/past'><Title order={4}>Past Events</Title></a>
       </Paper>
       </div>
     </div>

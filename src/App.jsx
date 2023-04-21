@@ -12,6 +12,7 @@ import WorkPage from "./Pages/WorkPage";
 import ContactPage from "./Pages/ContactPage";
 import AboutPage from "./Pages/AboutPage";
 import EventsComponent from "./Components/EventsComponent";
+import PastEventsComponent from "./Components/PastEventsComponent";
 
 
 

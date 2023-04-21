@@ -3,7 +3,7 @@ import { Link, Text, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Table, Button, Title } from "@mantine/core";
 
-export default function EventsComponent() {
+export default function PastEventsComponent() {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
   const [events, setEvents] = useState([]);
@@ -80,16 +80,14 @@ eventsCopy.splice(i, 1)
   }
 }
 }
+
 eventsCopy.sort((a,b) => a.day - b.day)
 eventsCopy.sort((a,b) => a.month - b.month)
 eventsCopy.sort((a,b) => a.year - b.year)
 
-
-
-
-
-
-
+pastEvents.sort((a,b) => a.day - b.day)
+pastEvents.sort((a,b) => a.month - b.month)
+pastEvents.sort((a,b) => a.year - b.year)
 
 
 
@@ -131,6 +129,19 @@ eventsCopy.sort((a,b) => a.year - b.year)
             <tr></tr>
           </thead>
           <tbody>{rows}</tbody>
+        </Table>
+        <br></br>
+      </div>
+      <br></br>
+      <br></br>
+      <Title>Past Events</Title>
+      <br></br>
+      <div className="table">
+        <Table>
+          <thead>
+            <tr></tr>
+          </thead>
+          <tbody>{pastRows}</tbody>
         </Table>
         <br></br>
       </div>

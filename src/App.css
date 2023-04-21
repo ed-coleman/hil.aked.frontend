@@ -54,6 +54,7 @@
   border-width: 1em;
 }
 
+
 .badgeContainer {
   display: flex;
   justify-content: center;
@@ -93,6 +94,7 @@
   color: black;
   opacity: 0.9;
 }
+
 
 
 
@@ -257,5 +259,15 @@ div[role="alert"] {
 #friendsPageBookContainer {
   margin-top: -50px;
   margin-bottom: -30px;
+}
+
+/*Table Component*/
+
+.table {
+  text-align: left;
+}
+
+.table span {
+  text-align: center;
 }
 
