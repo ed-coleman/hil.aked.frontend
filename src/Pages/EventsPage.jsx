@@ -9,26 +9,11 @@ import PastEventsComponent from '../Components/PastEventsComponent';
 export default function EventsPage() {
 
     const navigate = useNavigate()
-    
-  
    
 
     const goBack = () => {
         navigate('/')
     }
-
-    /*const pastRows = pastEvents.map((event) => (
-      <tr key={event._id}>
-        <td>{event.title}</td>
-        <td>{`${event.day}/${event.month}/${event.year}`}</td>
-        <td>{event.location}</td>
-        <td>{event.city}</td>
-        <td>
-          <a href={event.link}>{event.infolink}</a>
-        </td>
-      </tr>
-    ));*/
-    
 
 
   return (

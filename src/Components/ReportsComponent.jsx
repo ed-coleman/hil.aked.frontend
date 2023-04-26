@@ -3,10 +3,8 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useMediaQuery } from "/Hooks/MediaQueryHook";
-import ReportsComponent from "../Components/ReportsComponent"
-import JournalismComponent from "../Components/JournalismComponent";
 
-export default function WorkPage() {
+export default function ReportsComponent() {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
   const [work, setWork] = useState([]);
@@ -62,17 +60,37 @@ export default function WorkPage() {
     )
     )
 
-  return (
+  return isLoading ? (
+    <Title order={2}>Loading...</Title>
+  ) : (
+   isRowBased ? (
     <>
-    <br></br>
-    <Title>Reports / Chapters / Journal Articles </Title>
-    <br></br>
-      <ReportsComponent></ReportsComponent>
-    <br></br>
-    <Title>Journalism / Investigations / Op-ed</Title>
-    <br></br>
-    <JournalismComponent></JournalismComponent>
+      <br></br>
+      <div className="table">
+        <Table>
+          <thead>
+            <tr></tr>
+          </thead>
+          <tbody>{rows}</tbody>
+        </Table>
+        <br></br>
+      </div>
     </>
+    ):(
+      <>
+      <br></br>
+      <div className="table">
+        <Table>
+          <thead>
+            <tr></tr>
+          </thead>
+          <tbody>{smallRows}</tbody>
+        </Table>
+        <br></br>
+      </div>
+    </>
+
+    )
   )
 }
-   
+
