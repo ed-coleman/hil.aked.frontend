@@ -3,9 +3,10 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useMediaQuery } from "/Hooks/MediaQueryHook";
+import { LinkPreviewer } from "./LinkPreviewer";
+
 
 export default function JournalismComponent() {
-
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
   const [work, setWork] = useState([]);
@@ -36,35 +37,37 @@ export default function JournalismComponent() {
     }
   }
 
-  journalismCopy.forEach((report) => {
-    if (!report.month) {
-      report.month = "-";
+  journalismCopy.forEach((article) => {
+    if (!article.month) {
+      article.month = "-";
     }
   });
 
-  const isRowBased = useMediaQuery('(min-width: 700px)')
+  const isRowBased = useMediaQuery("(min-width: 800px)");
 
   const rows = journalismCopy.map((article) => (
     <tr key={article._id}>
-      <td><a href={article.link}>{article.title}</a></td>
+       <td><LinkPreviewer
+       href={article.link}
+       image={article.image}
+       title={article.title}
+       text={article.link}
+       >{`${article.title.substring(0,105)}...`}</LinkPreviewer></td>
       <td>{article.published}</td>
       <td>{article.month}</td>
       <td>{article.year}</td>
     </tr>
-  )
-  )
+  ));
 
-    const smallRows = journalismCopy.map((article) => (
-      <tr key={article.id}>
+  const smallRows = journalismCopy.map((article) => (
+    <tr key={article.id}>
         <td><a href={article.link}>{article.title}</a><br></br>{`${article.year} / ${article.published}`}</td>
       </tr>
-    )
-    )
+  ));
 
   return isLoading ? (
     <Title order={2}>Loading...</Title>
-  ) : (
-   isRowBased ? (
+  ) : isRowBased ? (
     <>
       <br></br>
       <div className="table">
@@ -77,8 +80,8 @@ export default function JournalismComponent() {
         <br></br>
       </div>
     </>
-    ):(
-      <>
+  ) : (
+    <>
       <br></br>
       <div className="table">
         <Table>
@@ -90,7 +93,5 @@ export default function JournalismComponent() {
         <br></br>
       </div>
     </>
-
-    )
-  )
+  );
 }

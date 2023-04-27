@@ -1,8 +1,10 @@
-import { Title, Table } from "@mantine/core";
+import { Title, Table, Popover, Button, Text } from "@mantine/core";
 import React from "react";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useMediaQuery } from "/Hooks/MediaQueryHook";
+import { useDisclosure } from "@mantine/hooks";
+import { LinkPreviewer } from "./LinkPreviewer";
 
 export default function ReportsComponent() {
   const navigate = useNavigate();
@@ -23,11 +25,13 @@ export default function ReportsComponent() {
     }
   };
 
+  const [opened, {close, open }] = useDisclosure(false)
+
   useEffect(() => {
     fetchWork();
   }, []);
 
-  let reportsCopy = [...reports];
+  const reportsCopy = [...reports]
 
   for (let i = 0; i < work.length; i++) {
     if (work[i].category === "report") {
@@ -41,11 +45,24 @@ export default function ReportsComponent() {
     }
   });
 
-  const isRowBased = useMediaQuery('(min-width: 700px)')
+
+  const isRowBased = useMediaQuery('(min-width: 800px)')
+
+  const tooLong = false
+
+
 
   const rows = reportsCopy.map((report) => (
+
+
+
     <tr key={report._id}>
-      <td><a href={report.link}>{report.title}</a></td>
+       <td><LinkPreviewer
+       href={report.link}
+       image={report.image}
+       title={report.title}
+       text={report.link}
+       >{`${report.title.substring(0,105)}...`}</LinkPreviewer></td>
       <td>{report.published}</td>
       <td>{report.month}</td>
       <td>{report.year}</td>

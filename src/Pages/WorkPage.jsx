@@ -1,10 +1,11 @@
-import { Title, Table } from "@mantine/core";
+import { Title } from "@mantine/core";
 import React from "react";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useMediaQuery } from "/Hooks/MediaQueryHook";
-import ReportsComponent from "../Components/ReportsComponent"
+import ReportsComponent from "../Components/ReportsComponent";
 import JournalismComponent from "../Components/JournalismComponent";
+
 
 export default function WorkPage() {
   const navigate = useNavigate();
@@ -43,36 +44,36 @@ export default function WorkPage() {
     }
   });
 
-  const isRowBased = useMediaQuery('(min-width: 700px)')
+  const isRowBased = useMediaQuery("(min-width: 700px)");
 
   const rows = reportsCopy.map((report) => (
     <tr key={report._id}>
-      <td><a href={report.link}>{report.title}</a></td>
       <td>{report.published}</td>
       <td>{report.month}</td>
       <td>{report.year}</td>
     </tr>
-  )
-  )
+  ));
 
-    const smallRows = reportsCopy.map((report) => (
-      <tr key={report.id}>
-        <td><a href={report.link}>{report.title}</a><br></br>{`${report.year} / ${report.published}`}</td>
-      </tr>
-    )
-    )
+  const smallRows = reportsCopy.map((report) => (
+    <tr key={report.id}>
+      <td>
+        <a href={report.link}>{report.title}</a>
+        <br></br>
+        {`${report.year} / ${report.published}`}
+      </td>
+    </tr>
+  ));
 
   return (
     <>
-    <br></br>
-    <Title>Reports / Chapters / Journal Articles </Title>
-    <br></br>
+      <br></br>
+      <Title>Reports / Chapters / Journal Articles </Title>
+      <br></br>
       <ReportsComponent></ReportsComponent>
-    <br></br>
-    <Title>Journalism / Investigations / Op-ed</Title>
-    <br></br>
-    <JournalismComponent></JournalismComponent>
+      <br></br>
+      <Title>Journalism / Investigations / Op-ed</Title>
+      <br></br>
+      <JournalismComponent></JournalismComponent>
     </>
-  )
+  );
 }
-   
