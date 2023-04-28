@@ -128,7 +128,7 @@ export default function FriendsPage() {
       </div>
       <br></br>
       <br></br>
-      <Paper id='bookBlurb' className="bio" radius="sm" shadow="sm" p="xl">
+      <Paper id='bookBlurb' className="bio" radius="sm" p="xl">
         <br></br>
         <Text>
           Friends of Israel: the Backlash against Palestine Solidarity provides
