@@ -4,14 +4,8 @@ import {
   Blockquote,
   Paper,
   Image,
-  Grid,
-  rem,
-  useMantineTheme,
-  SimpleGrid,
-  Skeleton,
   Title,
   Text,
-  Box,
 } from "@mantine/core";
 import Autoplay from "embla-carousel-autoplay";
 import { Carousel } from "@mantine/carousel";

@@ -1,4 +1,4 @@
-import { Title, Table } from "@mantine/core";
+import { Title, Table, Loader } from "@mantine/core";
 import React from "react";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -61,12 +61,14 @@ export default function JournalismComponent() {
 
   const smallRows = journalismCopy.map((article) => (
     <tr key={article.id}>
-        <td><a href={article.link}>{article.title}</a><br></br>{`${article.year} / ${article.published}`}</td>
+        <td><a className='link' href={article.link}>{article.title}</a><br></br>{`${article.year} / ${article.published}`}</td>
       </tr>
   ));
 
-  return isRowBased ? (
+  return ( isRowBased ? (
     <>
+      <br></br>
+      <Title>Journalism / Investigations / Op-ed</Title>
       <br></br>
       <div className="table">
         <Table>
@@ -91,5 +93,6 @@ export default function JournalismComponent() {
         <br></br>
       </div>
     </>
-  );
+  )
+    )
 }

@@ -46,12 +46,19 @@ export default function PastEventsComponent() {
 
   let currentDate = `${day}/${month}/${year}`;
 
+  for (let i = 0; i < eventsCopy.length; i++) {
+    if (eventsCopy[i].year < year) {
+      pastEvents.push(eventsCopy[i])
+      eventsCopy.splice(i, 1)
+  }
+}
+
 
 for (let i = 0; i < eventsCopy.length; i++) {
   if (eventsCopy[i].day < day && eventsCopy[i].month <= month && eventsCopy[i].year <= year) {
     pastEvents.push(eventsCopy[i])
     {
-      if ([i] > -1) {
+      if ([i] > 0) {
 eventsCopy.splice(i, 1)
       }
   }
@@ -75,7 +82,7 @@ pastEvents.sort((a,b) => a.year - b.year)
       <td>{event.location}</td>
       <td>{event.city}</td>
       <td>
-        <a href={event.link}>{event.infolink}</a>
+        <a className='link' href={event.link}>{event.infolink}</a>
       </td>
     </tr>
   ));
@@ -87,7 +94,7 @@ pastEvents.sort((a,b) => a.year - b.year)
       <td>{event.location}</td>
       <td>{event.city}</td>
       <td>
-        <a href={event.link}>{event.infolink}</a>
+        <a className="link" href={event.link}>{event.infolink}</a>
       </td>
     </tr>
   ));

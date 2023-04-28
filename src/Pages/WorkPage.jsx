@@ -1,14 +1,10 @@
-import { Title, Loader } from "@mantine/core";
+import { Loader } from "@mantine/core";
 import React from "react";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useMediaQuery } from "/Hooks/MediaQueryHook";
 import ReportsComponent from "../Components/ReportsComponent";
 import JournalismComponent from "../Components/JournalismComponent";
 
-
 export default function WorkPage() {
-  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
   const [work, setWork] = useState([]);
   const [reports, setReports] = useState([]);
@@ -44,42 +40,19 @@ export default function WorkPage() {
     }
   });
 
-  const isRowBased = useMediaQuery("(min-width: 700px)");
-
-  const rows = reportsCopy.map((report) => (
-    <tr key={report._id}>
-      <td>{report.published}</td>
-      <td>{report.month}</td>
-      <td>{report.year}</td>
-    </tr>
-  ));
-
-  const smallRows = reportsCopy.map((report) => (
-    <tr key={report.id}>
-      <td>
-        <a href={report.link}>{report.title}</a>
-        <br></br>
-        {`${report.year} / ${report.published}`}
-      </td>
-    </tr>
-  ));
-
   return isLoading ? (
     <>
-    <br></br>
-    <br></br>
-    <br></br>
-    <Loader color="dark" size="xl" variant="dots" />
+      <br></br>
+      <br></br>
+      <br></br>
+      <Loader color="dark" size="xl" variant="dots" />
     </>
-
-  ):(
+  ) : (
     <>
       <br></br>
-      <Title>Reports / Chapters / Journal Articles </Title>
       <br></br>
       <ReportsComponent></ReportsComponent>
       <br></br>
-      <Title>Journalism / Investigations / Op-ed</Title>
       <br></br>
       <JournalismComponent></JournalismComponent>
     </>

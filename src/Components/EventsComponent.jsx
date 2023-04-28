@@ -1,7 +1,7 @@
 import React from "react";
-import { Link, Text, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Table, Button, Title, Loader } from "@mantine/core";
+import { Table, Title, Loader } from "@mantine/core";
 
 export default function EventsComponent() {
   const navigate = useNavigate();
@@ -24,9 +24,7 @@ export default function EventsComponent() {
     fetchEvents();
   }, []);
 
-  const goBack = () => {
-    navigate("/");
-  };
+
 
   events.forEach((event) => {
     if (!event.link) {
@@ -44,8 +42,6 @@ export default function EventsComponent() {
   let month = date.getMonth() + 1;
   let year = date.getFullYear();
 
-  let currentDate = `${day}/${month}/${year}`;
-
 
 
 for (let i = 0; i < eventsCopy.length; i++) {
@@ -60,37 +56,17 @@ eventsCopy.splice(i, 1)
 }
 
 for (let i = 0; i < eventsCopy.length; i++) {
-  if (eventsCopy[i].month < month) {
-    pastEvents.push(eventsCopy[i])
-    {
-      if ([i] > -1) {
+  if (eventsCopy[i].day < day && eventsCopy[i].month <= month) {
 eventsCopy.splice(i, 1)
       }
   }
-}
-}
 
-for (let i = 0; i < eventsCopy.length; i++) {
-  if (eventsCopy[i].day < day && eventsCopy.month <= month) {
-    pastEvents.push(eventsCopy[i])
-    {
-      if ([i] > -1) {
-eventsCopy.splice(i, 1)
-      }
-  }
-}
-}
+
+
+
 eventsCopy.sort((a,b) => a.day - b.day)
 eventsCopy.sort((a,b) => a.month - b.month)
 eventsCopy.sort((a,b) => a.year - b.year)
-
-
-
-
-
-
-
-
 
 
   const rows = eventsCopy.map((event) => (
@@ -100,19 +76,7 @@ eventsCopy.sort((a,b) => a.year - b.year)
       <td>{event.location}</td>
       <td>{event.city}</td>
       <td>
-        <a href={event.link}>{event.infolink}</a>
-      </td>
-    </tr>
-  ));
-
-  const pastRows = pastEvents.map((event) => (
-    <tr key={event._id}>
-      <td>{event.title}</td>
-      <td>{`${event.day}/${event.month}/${event.year}`}</td>
-      <td>{event.location}</td>
-      <td>{event.city}</td>
-      <td>
-        <a href={event.link}>{event.infolink}</a>
+        <a className='link' href={event.link}>{event.infolink}</a>
       </td>
     </tr>
   ));

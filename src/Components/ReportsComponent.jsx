@@ -1,4 +1,4 @@
-import { Title, Table, Popover, Button, Text } from "@mantine/core";
+import { Title, Table, Popover, Button, Text, Loader } from "@mantine/core";
 import React from "react";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -57,12 +57,12 @@ export default function ReportsComponent() {
 
 
     <tr key={report._id}>
-       <td><LinkPreviewer
+       <td><div className="link"><LinkPreviewer
        href={report.link}
        image={report.image}
        title={report.title}
        text={report.link}
-       >{`${report.title.substring(0,105)}...`}</LinkPreviewer></td>
+       >{`${report.title.substring(0,105)}...`}</LinkPreviewer></div></td>
       <td>{report.published}</td>
       <td>{report.month}</td>
       <td>{report.year}</td>
@@ -72,13 +72,16 @@ export default function ReportsComponent() {
 
     const smallRows = reportsCopy.map((report) => (
       <tr key={report.id}>
-        <td><a href={report.link}>{report.title}</a><br></br>{`${report.year} / ${report.published}`}</td>
+        <td><a className='link' href={report.link}>{report.title}</a><br></br>{`${report.year} / ${report.published}`}</td>
       </tr>
     )
     )
 
-  return isRowBased ? (
+  return (
+     isRowBased ? (
     <>
+    <br></br>
+     <Title>Reports / Chapters / Journal Articles </Title>
       <br></br>
       <div className="table">
         <Table>
@@ -103,7 +106,7 @@ export default function ReportsComponent() {
         <br></br>
       </div>
     </>
-
     )
+  )
 }
 
