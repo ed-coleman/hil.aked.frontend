@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, Text, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Table, Button, Title } from "@mantine/core";
+import { Table, Button, Title, Loader } from "@mantine/core";
 
 export default function EventsComponent() {
   const navigate = useNavigate();
@@ -119,7 +119,12 @@ eventsCopy.sort((a,b) => a.year - b.year)
 
 
   return isLoading ? (
-    <Title order={2}>Loading...</Title>
+    <>
+    <br></br>
+    <br></br>
+    <br></br>
+    <Loader color="dark" size="xl" variant="dots" />
+    </>
   ) : events.length === 0 ? (
     <Title order={2}>No upcoming events at the moment </Title>
   ) : (

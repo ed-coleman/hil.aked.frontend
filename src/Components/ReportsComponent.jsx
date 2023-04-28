@@ -77,10 +77,7 @@ export default function ReportsComponent() {
     )
     )
 
-  return isLoading ? (
-    <Title order={2}>Loading...</Title>
-  ) : (
-   isRowBased ? (
+  return isRowBased ? (
     <>
       <br></br>
       <div className="table">
@@ -108,6 +105,5 @@ export default function ReportsComponent() {
     </>
 
     )
-  )
 }
 

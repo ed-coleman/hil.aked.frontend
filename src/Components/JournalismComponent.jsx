@@ -65,9 +65,7 @@ export default function JournalismComponent() {
       </tr>
   ));
 
-  return isLoading ? (
-    <Title order={2}>Loading...</Title>
-  ) : isRowBased ? (
+  return isRowBased ? (
     <>
       <br></br>
       <div className="table">

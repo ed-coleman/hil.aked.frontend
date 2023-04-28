@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, Text, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Table, Button, Title } from "@mantine/core";
+import { Table, Button, Title, Loader } from "@mantine/core";
 
 export default function PastEventsComponent() {
   const navigate = useNavigate();
@@ -47,31 +47,8 @@ export default function PastEventsComponent() {
   let currentDate = `${day}/${month}/${year}`;
 
 
-
 for (let i = 0; i < eventsCopy.length; i++) {
-  if (eventsCopy[i].year < year) {
-    pastEvents.push(eventsCopy[i])
-    {
-      if ([i] > -1) {
-eventsCopy.splice(i, 1)
-      }
-  }
-}
-}
-
-for (let i = 0; i < eventsCopy.length; i++) {
-  if (eventsCopy[i].month < month) {
-    pastEvents.push(eventsCopy[i])
-    {
-      if ([i] > -1) {
-eventsCopy.splice(i, 1)
-      }
-  }
-}
-}
-
-for (let i = 0; i < eventsCopy.length; i++) {
-  if (eventsCopy[i].day < day && eventsCopy.month <= month) {
+  if (eventsCopy[i].day < day && eventsCopy[i].month <= month && eventsCopy[i].year <= year) {
     pastEvents.push(eventsCopy[i])
     {
       if ([i] > -1) {
@@ -117,7 +94,12 @@ pastEvents.sort((a,b) => a.year - b.year)
 
 
   return isLoading ? (
-    <Title order={2}>Loading...</Title>
+    <>
+    <br></br>
+    <br></br>
+    <br></br>
+    <Loader color="dark" size="xl" variant="dots" />
+    </>
   ) : events.length === 0 ? (
     <Title order={2}>No upcoming events at the moment </Title>
   ) : (

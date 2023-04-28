@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, Text, useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Table, Button, Title } from '@mantine/core';
+import { Table, Button, Title, Loader } from '@mantine/core';
 import PastEventsComponent from '../Components/PastEventsComponent';
 
 

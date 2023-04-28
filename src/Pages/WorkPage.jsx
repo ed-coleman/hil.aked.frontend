@@ -1,4 +1,4 @@
-import { Title } from "@mantine/core";
+import { Title, Loader } from "@mantine/core";
 import React from "react";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -64,7 +64,15 @@ export default function WorkPage() {
     </tr>
   ));
 
-  return (
+  return isLoading ? (
+    <>
+    <br></br>
+    <br></br>
+    <br></br>
+    <Loader color="dark" size="xl" variant="dots" />
+    </>
+
+  ):(
     <>
       <br></br>
       <Title>Reports / Chapters / Journal Articles </Title>
