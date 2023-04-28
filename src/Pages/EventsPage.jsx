@@ -1,7 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Title } from "@mantine/core";
+import { Title} from "@mantine/core";
 import PastEventsComponent from "../Components/PastEventsComponent";
+import EventsComponent from "../Components/EventsComponent";
 
 export default function EventsPage() {
   const navigate = useNavigate();
@@ -10,7 +11,7 @@ export default function EventsPage() {
     <>
       <br></br>
       <br></br>
-      <Title>Upcoming Events</Title>
+     <EventsComponent />
       <br></br>
       <br></br>
       <PastEventsComponent />

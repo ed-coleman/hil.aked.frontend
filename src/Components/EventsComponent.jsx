@@ -94,6 +94,9 @@ eventsCopy.sort((a,b) => a.year - b.year)
   ) : (
     <>
       <br></br>
+      <Title>Upcoming Events</Title>
+      <br></br>
+      <br></br>
       <div className="table">
         <Table>
           <thead>
