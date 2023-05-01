@@ -83,6 +83,8 @@ export default function JournalismComponent() {
   ) : (
     <>
       <br></br>
+      <Title>Journalism / Investigations / Op-ed</Title>
+      <br></br>
       <div className="table">
         <Table>
           <thead>

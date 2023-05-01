@@ -96,6 +96,8 @@ export default function ReportsComponent() {
     ):(
       <>
       <br></br>
+      <Title>Reports / Chapters / Journal Articles </Title>
+      <br></br>
       <div className="table">
         <Table>
           <thead>
