@@ -44,22 +44,28 @@ export default function EventsComponent() {
 
 
 
-for (let i = 0; i < eventsCopy.length; i++) {
-  if (eventsCopy[i].year < year) {
-    pastEvents.push(eventsCopy[i])
-    {
-      if ([i] > -1) {
-eventsCopy.splice(i, 1)
-      }
+  for (let i = 0; i < eventsCopy.length; i++) {
+    if (eventsCopy[i].year < year) {
+      pastEvents.push(eventsCopy[i])
+      eventsCopy.splice(i, 1)
   }
-}
 }
 
 for (let i = 0; i < eventsCopy.length; i++) {
-  if (eventsCopy[i].day < day && eventsCopy[i].month <= month) {
+  if (eventsCopy[i].month < month && eventsCopy[i].year <= year) {
+    pastEvents.push(eventsCopy[i])
+    eventsCopy.splice(i, 1)
+}
+}
+
+
+for (let i = 0; i < eventsCopy.length; i++) {
+  if (eventsCopy[i].day < day && eventsCopy[i].month <= month && eventsCopy[i].year <= year) {
+    pastEvents.push(eventsCopy[i])
 eventsCopy.splice(i, 1)
-      }
+      
   }
+}
 
 
 

@@ -53,14 +53,20 @@ export default function PastEventsComponent() {
   }
 }
 
+for (let i = 0; i < eventsCopy.length; i++) {
+  if (eventsCopy[i].month < month && eventsCopy[i].year <= year) {
+    pastEvents.push(eventsCopy[i])
+    console.log(events[i])
+    eventsCopy.splice(i, 1)
+}
+}
+
 
 for (let i = 0; i < eventsCopy.length; i++) {
   if (eventsCopy[i].day < day && eventsCopy[i].month <= month && eventsCopy[i].year <= year) {
     pastEvents.push(eventsCopy[i])
     {
-      if ([i] > 0) {
-eventsCopy.splice(i, 1)
-      }
+eventsCopy.splice(i, 1) 
   }
 }
 }
