@@ -64,8 +64,9 @@ export default function MediaComponent() {
 
   return isRowBased ? (
     <>
-      <br></br>
       <Title>Media Coverage</Title>
+      <br></br>
+      <br></br>
       <br></br>
       <div className="table">
         <Table>
@@ -79,6 +80,9 @@ export default function MediaComponent() {
     </>
   ) : (
     <>
+      <Title>Media Coverage</Title>
+      <br></br>
+      <br></br>
       <br></br>
       <div className="table">
         <Table>

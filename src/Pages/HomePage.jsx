@@ -93,10 +93,6 @@ export default function HomePage() {
           </Grid.Col>
         </Grid>
       </Paper>
-
-      <Title className="header" align="left">
-        Upcoming Events
-      </Title>
       <br></br>
       <EventsComponent />
       <br></br>

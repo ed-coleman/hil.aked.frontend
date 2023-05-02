@@ -53,7 +53,7 @@ export default function FriendsPage() {
         <Carousel.Slide>
           <Blockquote
             className="carouselQuote"
-            cite="- Yara Harawi, author of The Stone House "
+            cite="- Yara Hawari, author of The Stone House "
             icon={null}
           >
             “This book expertly maps out the key figures supporting and
@@ -99,7 +99,7 @@ export default function FriendsPage() {
         <Carousel.Slide>
           <Blockquote
             className="carouselQuote"
-            cite="- Nadine El-Nany, author of (B)ordering Britain"
+            cite="- Nadine El-Enany, author of (B)ordering Britain"
             icon={null}
           >
             “This book is as urgent as it is a long-awaited critique of the

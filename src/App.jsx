@@ -51,6 +51,9 @@ function App() {
             <a className="navBarLink" href="/work">
               Work
             </a>
+            <a className="navBarLink" href='/media'>
+              Media
+            </a>
             <a className="navBarLink" href="events">
               Events
             </a>
