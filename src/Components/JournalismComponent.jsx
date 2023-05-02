@@ -1,4 +1,4 @@
-import { Title, Table, Loader } from "@mantine/core";
+import { Title, Table } from "@mantine/core";
 import React from "react";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -7,7 +7,6 @@ import { LinkPreviewer } from "./LinkPreviewer";
 
 
 export default function JournalismComponent() {
-  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
   const [work, setWork] = useState([]);
   const [journalism, setJournalism] = useState([]);

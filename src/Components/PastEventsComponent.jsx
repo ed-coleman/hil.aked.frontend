@@ -24,10 +24,6 @@ export default function PastEventsComponent() {
     fetchEvents();
   }, []);
 
-  const goBack = () => {
-    navigate("/");
-  };
-
   events.forEach((event) => {
     if (!event.link) {
       event.infolink = "-";
@@ -43,8 +39,6 @@ export default function PastEventsComponent() {
   let day = date.getDate();
   let month = date.getMonth() + 1;
   let year = date.getFullYear();
-
-  let currentDate = `${day}/${month}/${year}`;
 
   for (let i = 0; i < eventsCopy.length; i++) {
     if (eventsCopy[i].year < year) {

@@ -1,87 +1,71 @@
-import { Title, Table, Popover, Button, Text, Loader } from "@mantine/core";
+import { Title, Table } from "@mantine/core";
 import React from "react";
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useMediaQuery } from "/Hooks/MediaQueryHook";
-import { useDisclosure } from "@mantine/hooks";
 import { LinkPreviewer } from "./LinkPreviewer";
 
 export default function MediaComponent() {
-  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
-  const [work, setWork] = useState([]);
-  const [media, setRepsetMedia] = useState([]);
+  const [media, setMedia] = useState([]);
 
-  const fetchWork = async () => {
+  const fetchMedia = async () => {
     try {
       const response = await fetch(
-        "https://hil-aked-backend.adaptable.app/work"
+        "https://hil-aked-backend.adaptable.app/media"
       );
       const parsed = await response.json();
-      setWork(parsed);
+      setMedia(parsed);
       setIsLoading(false);
     } catch (error) {
       console.log(error);
     }
   };
 
-  const [opened, {close, open }] = useDisclosure(false)
-
   useEffect(() => {
-    fetchWork();
+    fetchMedia();
   }, []);
 
-  const mediaCopy = [...media]
+  let mediaCopy = [...media];
 
-  for (let i = 0; i < work.length; i++) {
-    if (work[i].category === "media") {
-      mediaCopy.push(work[i]);
-    }
-  }
-
-  reportsCopy.forEach((report) => {
-    if (!report.month) {
-      report.month = "-";
+  mediaCopy.forEach((media) => {
+    if (!media.month) {
+      media.month = "-";
     }
   });
 
+  const isRowBased = useMediaQuery("(min-width: 800px)");
 
-  const isRowBased = useMediaQuery('(min-width: 800px)')
-
-  const tooLong = false
-
-
-
-  const rows = reportsCopy.map((report) => (
-
-
-
-    <tr key={report._id}>
-       <td><LinkPreviewer
-       href={report.link}
-       image={report.image}
-       title={report.title}
-       text={report.link}
-       >{`${report.title.substring(0,105)}...`}</LinkPreviewer></td>
-      <td>{report.published}</td>
-      <td>{report.month}</td>
-      <td>{report.year}</td>
+  const rows = mediaCopy.map((media) => (
+    <tr key={media._id}>
+      <td>
+        <LinkPreviewer
+          href={media.link}
+          image={media.image}
+          title={media.title}
+          text={media.link}
+        >{`${media.title.substring(0, 105)}...`}</LinkPreviewer>
+      </td>
+      <td>{media.published}</td>
+      <td>{media.month}</td>
+      <td>{media.year}</td>
     </tr>
-  )
-  )
+  ));
 
-    const smallRows = reportsCopy.map((report) => (
-      <tr key={report.id}>
-        <td><a href={report.link}>{report.title}</a><br></br>{`${report.year} / ${report.published}`}</td>
-      </tr>
-    )
-    )
+  const smallRows = mediaCopy.map((media) => (
+    <tr key={media.id}>
+      <td>
+        <a href={media.link}>{media.title}</a>
+        <br></br>
+        {`${media.year} / ${media.published}`}
+      </td>
+    </tr>
+  ));
 
-  return (
-     isRowBased ? (
+  return isRowBased ? (
     <>
-    <br></br>
-     <Title>Reports / Chapters / Journal Articles </Title>
+      <br></br>
+      <Title>Media Coverage</Title>
       <br></br>
       <div className="table">
         <Table>
@@ -93,8 +77,8 @@ export default function MediaComponent() {
         <br></br>
       </div>
     </>
-    ):(
-      <>
+  ) : (
+    <>
       <br></br>
       <div className="table">
         <Table>
@@ -106,7 +90,5 @@ export default function MediaComponent() {
         <br></br>
       </div>
     </>
-    )
-  )
+  );
 }
-

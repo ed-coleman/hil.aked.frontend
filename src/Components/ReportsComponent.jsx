@@ -25,13 +25,11 @@ export default function ReportsComponent() {
     }
   };
 
-  const [opened, {close, open }] = useDisclosure(false)
-
   useEffect(() => {
     fetchWork();
   }, []);
 
-  const reportsCopy = [...reports]
+  const reportsCopy = [...reports];
 
   for (let i = 0; i < work.length; i++) {
     if (work[i].category === "report") {
@@ -45,43 +43,42 @@ export default function ReportsComponent() {
     }
   });
 
-
-  const isRowBased = useMediaQuery('(min-width: 800px)')
-
-  const tooLong = false
-
-
+  const isRowBased = useMediaQuery("(min-width: 800px)");
 
   const rows = reportsCopy.map((report) => (
-
-
-
     <tr key={report._id}>
-       <td><div className="link"><LinkPreviewer
-       href={report.link}
-       image={report.image}
-       title={report.title}
-       text={report.link}
-       >{`${report.title.substring(0,105)}...`}</LinkPreviewer></div></td>
+      <td>
+        <div className="link">
+          <LinkPreviewer
+            href={report.link}
+            image={report.image}
+            title={report.title}
+            text={report.link}
+          >{`${report.title.substring(0, 105)}...`}</LinkPreviewer>
+        </div>
+      </td>
       <td>{report.published}</td>
       <td>{report.month}</td>
       <td>{report.year}</td>
     </tr>
-  )
-  )
+  ));
 
-    const smallRows = reportsCopy.map((report) => (
-      <tr key={report.id}>
-        <td><a className='link' href={report.link}>{report.title}</a><br></br>{`${report.year} / ${report.published}`}</td>
-      </tr>
-    )
-    )
+  const smallRows = reportsCopy.map((report) => (
+    <tr key={report.id}>
+      <td>
+        <a className="link" href={report.link}>
+          {report.title}
+        </a>
+        <br></br>
+        {`${report.year} / ${report.published}`}
+      </td>
+    </tr>
+  ));
 
-  return (
-     isRowBased ? (
+  return isRowBased ? (
     <>
-    <br></br>
-     <Title>Reports / Chapters / Journal Articles </Title>
+      <br></br>
+      <Title>Reports / Chapters / Journal Articles </Title>
       <br></br>
       <div className="table">
         <Table>
@@ -93,8 +90,8 @@ export default function ReportsComponent() {
         <br></br>
       </div>
     </>
-    ):(
-      <>
+  ) : (
+    <>
       <br></br>
       <Title>Reports / Chapters / Journal Articles </Title>
       <br></br>
@@ -108,7 +105,5 @@ export default function ReportsComponent() {
         <br></br>
       </div>
     </>
-    )
-  )
+  );
 }
-
