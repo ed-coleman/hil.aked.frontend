@@ -84,7 +84,7 @@ function App() {
                   mr="xl"
                 />
               </MediaQuery>
-              <img src="/images/logo.png"></img>
+              <Title>Hil Aked</Title>
             </div>
           </Header>
         }

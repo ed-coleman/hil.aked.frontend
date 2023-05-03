@@ -76,7 +76,6 @@ export default function HomePage() {
             <div id="availableNowBadgeContainer">
               <Paper id="availableNowBadge" radius="lg" shadow="md" p="lg">
                 <a className="badgeLink" href="/about">
-                  <Title order={3}>More Info</Title>
                 </a>
               </Paper>
             </div>

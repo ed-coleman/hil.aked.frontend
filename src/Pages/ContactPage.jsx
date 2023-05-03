@@ -4,7 +4,7 @@ import { TextInput, Textarea, Title } from "@mantine/core";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { init, sendForm } from "emailjs-com";
-init("xSPkoiYJ1JaNZ4gFE");
+init("tYAFETHcjmXkNyHI3");
 
 export default function ContactPage() {
   const navigate = useNavigate();
