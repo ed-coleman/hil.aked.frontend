@@ -67,7 +67,7 @@ export default function JournalismComponent() {
   return ( isRowBased ? (
     <>
       <br></br>
-      <Title>Journalism / Investigations / Op-ed</Title>
+      <Title>Journalism / Investigations / Op-eds</Title>
       <br></br>
       <br></br>
       <br></br>

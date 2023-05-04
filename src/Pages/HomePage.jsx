@@ -70,8 +70,8 @@ export default function HomePage() {
               activist with a background in political sociology whose work has
               appeared in the Guardian, Independent, Sky News and Al Jazeera, as
               well as volumes from Pluto Press and Zed Books/Bloomsbury. Their
-              first book Friends of Israel: The Backlash Against Palestine
-              Solidarity was published by Verso in 2023.
+              first book <span>Friends of Israel: The Backlash Against Palestine
+              Solidarity</span> was published by Verso in 2023.
             </Text>
             <div id="availableNowBadgeContainer">
             </div>

@@ -1,17 +1,11 @@
 import React from "react";
 import { useRef } from "react";
-import {
-  Blockquote,
-  Paper,
-  Image,
-  Title,
-  Text,
-} from "@mantine/core";
+import { Blockquote, Paper, Image, Title, Text } from "@mantine/core";
 import Autoplay from "embla-carousel-autoplay";
 import { Carousel } from "@mantine/carousel";
 
 export default function FriendsPage() {
-  const autoplay = useRef(Autoplay({ delay: 6000 }));
+  const autoplay = useRef(Autoplay({ delay: 1000 }));
 
   return (
     <div className="friendShell">
@@ -113,6 +107,34 @@ export default function FriendsPage() {
             liberation”
           </Blockquote>
         </Carousel.Slide>
+        <Carousel.Slide>
+          <Blockquote
+            className="carouselQuote"
+            cite="- Liz Fekete, Director, Institute of Race Relations, author of Europe's Fault Lines"
+            icon={null}
+          >
+            “Not only the definitive study of political influence, state
+            propaganda and lobbying by British actors on behalf of 'Brand
+            Israel', but also a passionate defence of the universal application
+            of anti-racist principles. Hil Aked has grasped the indivisibility
+            of the fight against Israeli Apartheid and the fight against
+            antisemitism. A lucid and thoroughly courageous intervention that
+            will stand the test of time.”
+          </Blockquote>
+        </Carousel.Slide>
+        <Carousel.Slide>
+          <Blockquote
+            className="carouselQuote"
+            cite="- Ghada Karmi, author of Return"
+            icon={null}
+          >
+            “No one who reads Hil Aked's meticulously-researched book can be
+            left in any doubt about how Israel's friends operate to subvert
+            British popular perceptions and the British political process in
+            favour of Zionism. An essential and timely expose of an important
+            and hitherto neglected subject.”
+          </Blockquote>
+        </Carousel.Slide>
       </Carousel>
       <br></br>
 
@@ -128,7 +150,7 @@ export default function FriendsPage() {
       </div>
       <br></br>
       <br></br>
-      <Paper id='bookBlurb' className="bio" radius="sm" p="xl">
+      <Paper id="bookBlurb" className="bio" radius="sm" p="xl">
         <br></br>
         <Text>
           Friends of Israel: the Backlash against Palestine Solidarity provides

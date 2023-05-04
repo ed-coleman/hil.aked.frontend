@@ -79,7 +79,7 @@ eventsCopy.sort((a,b) => a.year - b.year)
     <tr key={event._id}>
       <td>{event.title}</td>
       <td>{`${event.day}/${event.month}/${event.year}`}</td>
-      <td>{event.location}</td>
+      <td>{`${event.location.substring(0, 35)}`}</td>
       <td>{event.city}</td>
       <td>
         <a className='link' href={event.link}>{event.infolink}</a>
