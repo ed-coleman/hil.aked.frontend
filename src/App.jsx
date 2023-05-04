@@ -10,6 +10,7 @@ import {
   Header,
   MantineProvider,
   Text,
+  Title,
   AppShell,
 } from "@mantine/core";
 import HomePage from "./Pages/HomePage";
