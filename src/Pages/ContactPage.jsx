@@ -28,7 +28,7 @@ export default function ContactPage() {
     const statusMessage = document.querySelector(".status-message");
     console.log(data);
     generateContactNumber();
-    sendForm("default_service", "template_ehw1tvt", "#contact-form").then(
+    sendForm("default_service", "template_0dbqo1h", "#contact-form").then(
       function (response) {
         console.log("SUCCESS!", response.status, response.text);
         setStatusMessage("Message sent!");

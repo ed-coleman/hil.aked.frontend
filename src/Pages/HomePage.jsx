@@ -74,10 +74,6 @@ export default function HomePage() {
               Solidarity was published by Verso in 2023.
             </Text>
             <div id="availableNowBadgeContainer">
-              <Paper id="availableNowBadge" radius="lg" shadow="md" p="lg">
-                <a className="badgeLink" href="/about">
-                </a>
-              </Paper>
             </div>
           </Grid.Col>
           <Grid.Col gutter="xl" md={1} lg={1}></Grid.Col>
