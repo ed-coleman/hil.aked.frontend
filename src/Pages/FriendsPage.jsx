@@ -5,7 +5,7 @@ import Autoplay from "embla-carousel-autoplay";
 import { Carousel } from "@mantine/carousel";
 
 export default function FriendsPage() {
-  const autoplay = useRef(Autoplay({ delay: 1000 }));
+  const autoplay = useRef(Autoplay({ delay: 6000 }));
 
   return (
     <div className="friendShell">
