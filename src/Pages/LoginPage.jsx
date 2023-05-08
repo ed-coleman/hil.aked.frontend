@@ -26,7 +26,7 @@ export default function LoginPage() {
         }
       );
       const parsed = await response.json();
-      console.log("login stuff ", parsed);
+      console.log("login parsed: ", parsed);
 
       setToken(parsed.token);
 

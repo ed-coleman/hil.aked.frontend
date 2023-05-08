@@ -3,7 +3,6 @@
     "private": true,
     "version": "0.0.0",
     "type": "module",
-    "proxy": "https://hil-aked-backend.adaptable.app",
     "scripts": {
         "dev": "vite",
         "build": "vite build",
