@@ -20,6 +20,7 @@ import WorkPage from "./Pages/WorkPage";
 import ContactPage from "./Pages/ContactPage";
 import AboutPage from "./Pages/AboutPage";
 import MediaPage from "./Pages/MediaPage";
+import LoginPage from "./Pages/LoginPage";
 
 function App() {
   const [opened, setOpened] = useState(false);
@@ -98,6 +99,7 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/media" element={<MediaPage />} />
+          <Route path="/login" element={<LoginPage />} />
         </Routes>
       </AppShell>
     </MantineProvider>
