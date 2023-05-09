@@ -18,10 +18,11 @@ function LoginPage(props) {
 
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
+  const handleUsername = (e) => setPassword(e.target.value)
 
   const handleLoginSubmit = (e) => {
     e.preventDefault();
-    const requestBody = { email, password };
+    const requestBody = { username, email, password };
 
     axios
       .post(`${API_URL}/login`, requestBody)
@@ -53,6 +54,8 @@ function LoginPage(props) {
       <h1>Login</h1>
 
       <form onSubmit={handleLoginSubmit}>
+      <label>Username:</label>
+      <input type="text" name="username" value={username} onChange={handleUsername} />
         <label>Email:</label>
         <input type="email" name="email" value={email} onChange={handleEmail} />
 
