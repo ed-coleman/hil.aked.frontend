@@ -21,6 +21,8 @@ import ContactPage from "./Pages/ContactPage";
 import AboutPage from "./Pages/AboutPage";
 import MediaPage from "./Pages/MediaPage";
 import LoginPage from "./Pages/LoginPage";
+import AdminPage from "./Pages/AdminPage";
+import IsPrivate from "./Components/isPrivate";
 
 function App() {
   const [opened, setOpened] = useState(false);
@@ -100,6 +102,7 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/media" element={<MediaPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/admin" element={<IsPrivate> <AdminPage /></IsPrivate>} />
         </Routes>
       </AppShell>
     </MantineProvider>

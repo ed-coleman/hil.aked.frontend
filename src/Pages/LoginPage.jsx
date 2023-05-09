@@ -1,54 +1,77 @@
-import React from "react";
-import AuthForm from "../Components/AuthForm";
-import { useState, useContext } from "react";
-import { useNavigate, Link } from "react-router-dom";
-import { SessionContext } from "../Contexts/SessionContext";
+// src/pages/LoginPage.js
 
-export default function LoginPage() {
+import { useState, useContext } from "react";
+import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../Contexts/SessionContext";
+
+const API_URL = "http://localhost:5000";
+
+function LoginPage(props) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState(undefined);
+
   const navigate = useNavigate();
 
-  const { setToken, user, setUser, verifyToken, token } =
-    useContext(SessionContext);
+  const { storeToken, authenticateUser } = useContext(AuthContext)
 
-  const [username, setUsername] = useState("");
-  const [passwordHash, setPasswordHash] = useState("");
+  const handleEmail = (e) => setEmail(e.target.value);
+  const handlePassword = (e) => setPassword(e.target.value);
 
-  const handleSubmit = async () => {
-    try {
-      const response = await fetch(
-        "https://hil-aked-backend.adaptable.app/login",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ username, passwordHash }),
-        }
-      );
-      const parsed = await response.json();
-      console.log("login parsed: ", parsed);
+  const handleLoginSubmit = (e) => {
+    e.preventDefault();
+    const requestBody = { email, password };
 
-      setToken(parsed.token);
+    axios
+      .post(`${API_URL}/login`, requestBody)
+      .then((response) => {
+        // Request to the server's endpoint `/auth/login` returns a response
+        // with the JWT string ->  response.data.authToken
+        console.log("JWT token", response.data.authToken);
 
-      if (response.status === 200) {
-        navigate("/work");
-      }
-    } catch (error) {
-      console.log(error);
-    }
+
+        // store token in local storage
+
+        storeToken(response.data.authToken)
+
+            
+        // Verify the token by sending a request 
+        // to the server's JWT validation endpoint. 
+
+        authenticateUser(); 
+
+        navigate("/admin");
+      })
+      .catch((error) => {
+        console.log(error)
+      });
   };
 
   return (
-    <>
-      <div>Log in</div>
-      <AuthForm
-        username={username}
-        setUsername={setUsername}
-        passwordHash={passwordHash}
-        setPasswordHash={setPasswordHash}
-        onSubmit={handleSubmit}
-        isLogin
-      />
-    </>
+    <div className="LoginPage">
+      <h1>Login</h1>
+
+      <form onSubmit={handleLoginSubmit}>
+        <label>Email:</label>
+        <input type="email" name="email" value={email} onChange={handleEmail} />
+
+        <label>Password:</label>
+        <input
+          type="password"
+          name="password"
+          value={password}
+          onChange={handlePassword}
+        />
+
+        <button type="submit">Login</button>
+      </form>
+      {errorMessage && <p className="error-message">{errorMessage}</p>}
+
+      <p>Don't have an account yet?</p>
+      <Link to={"/signup"}> Sign Up</Link>
+    </div>
   );
 }
+
+export default LoginPage;

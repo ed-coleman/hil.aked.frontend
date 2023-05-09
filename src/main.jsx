@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import { createGlobalStyle } from "styled-components";
 import App from "./App";
 import "./index.css";
-import SessionContextProvider from "./Contexts/SessionContext";
+import { AuthProviderWrapper } from "./Contexts/SessionContext";
 
 createGlobalStyle`
   body {
@@ -23,9 +23,9 @@ createGlobalStyle`
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
-    <SessionContextProvider>
+    <AuthProviderWrapper>
       <App />
-      </SessionContextProvider>
+      </AuthProviderWrapper>
     </BrowserRouter>
   </React.StrictMode>
 );

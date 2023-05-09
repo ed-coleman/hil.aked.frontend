@@ -1,61 +1,71 @@
-import React, { createContext } from "react";
-import { useState, useEffect } from "react";
 
-export const SessionContext = createContext();
 
-const SessionContextProvider = ({ children }) => {
+import React from "react";
+import { useState, useEffect, useContext } from "react";
+import axios from "axios";
+const API_URL = "http://localhost:5000";
+
+const AuthContext = React.createContext();
+
+function AuthProviderWrapper(props) {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [token, setToken] = useState("");
-  const [isAuth, setIsAuth] = useState(false);
-  const [user, setUser] = useState("");
+  const [user, setUser] = useState(null);
 
-  const verifyToken = async (jwt) => {
-    const response = await fetch(
-      "https://hil-aked-backend.adaptable.app/verify",
-      {
-        headers: {
-          method: "GET",
-          authorization: `Bearer ${jwt}`,
-        },
-      }
-    );
-    console.log('headers: ', response)
-    const parsed = await response.json();
-    console.log("response from verify =>", response);
-    if (response.status === 2000) {
-      console.log("response json", parsed);
-      setToken(jwt);
-      console.log(jwt);
-      setUser(parsed.data);
-      setIsLoading(false);
-      console.log("token = ", token);
-      setIsAuth(true);
-    } else {
-      setToken(undefined);
-      setIsAuth(false);
-      setIsLoading(false);
-    }
+  // store token in local storage
+
+  const storeToken = (token) => {
+    localStorage.setItem("authToken", token);
   };
 
-  useEffect(() => {
-    const localToken = window.localStorage.getItem("authToken");
-    verifyToken(localToken);
-  }, []);
+// grab the stored token from the local storage
 
-  useEffect(() => {
-    console.log("token = ", token);
-    if (token) {
-      window.localStorage.setItem("authToken", token);
-      verifyToken(token);
-    }
-  }, [token]);
+const authenticateUser = () => {
+  const storedToken = localStorage.getItem('authToken')
+
+  if (storedToken) {
+    // We must send the JWT token in the request's "Authorization" Headers
+    axios.get(
+      `${API_URL}/verify`, 
+      { headers: { Authorization: `Bearer ${storedToken}`} }
+    )
+    .then((response) => {
+      // If the server verifies that the JWT token is valid  
+      const user = response.data;
+     // Update state variables        
+      setIsLoggedIn(true);
+      setIsLoading(false);
+      setUser(user);        
+    })
+    .catch((error) => {
+      // If the server sends an error response (invalid token) 
+      // Update state variables         
+      setIsLoggedIn(false);
+      setIsLoading(false);
+      setUser(null);        
+    });      
+  } else {
+    // If the token is not available (or is removed)
+      setIsLoggedIn(false);
+      setIsLoading(false);
+      setUser(null);      
+  }   
+}
+
+
+useEffect(() => { 
+  authenticateUser()
+}, []);
+
+
+
+
 
   return (
-    <SessionContext.Provider
-      value={{ setToken, isAuth, isLoading, user, setUser, verifyToken, token }}
-    >
-      {children}
-    </SessionContext.Provider>
+    <AuthContext.Provider value={{ isLoggedIn, isLoading, user, storeToken, authenticateUser }}>
+      {props.children}
+    </AuthContext.Provider>
   );
-};
-export default SessionContextProvider;
+}
+
+export { AuthProviderWrapper, AuthContext };
