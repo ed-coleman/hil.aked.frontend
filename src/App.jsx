@@ -23,6 +23,7 @@ import MediaPage from "./Pages/MediaPage";
 import LoginPage from "./Pages/LoginPage";
 import AdminPage from "./Pages/AdminPage";
 import IsPrivate from "./Components/isPrivate";
+import UpdatePage from "./Pages/UpdatePage";
 
 function App() {
   const [opened, setOpened] = useState(false);
@@ -103,6 +104,7 @@ function App() {
           <Route path="/media" element={<MediaPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/admin" element={<IsPrivate> <AdminPage /></IsPrivate>} />
+          <Route path={'/events/update/:eventId'} element={<IsPrivate><UpdatePage /></IsPrivate>} />
         </Routes>
       </AppShell>
     </MantineProvider>
