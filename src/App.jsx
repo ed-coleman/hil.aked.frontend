@@ -22,7 +22,7 @@ import AboutPage from "./Pages/AboutPage";
 import MediaPage from "./Pages/MediaPage";
 import LoginPage from "./Pages/LoginPage";
 import AdminPage from "./Pages/AdminPage";
-import IsPrivate from "./Components/isPrivate";
+import IsPrivate from "./Components/IsPrivate";
 import UpdatePage from "./Pages/UpdatePage";
 
 function App() {
