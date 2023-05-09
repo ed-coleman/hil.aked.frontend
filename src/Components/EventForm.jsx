@@ -29,11 +29,10 @@ export default function EventForm({
   const [time, setTime] = useState(eventTime)
   const [link, setLink] = useState(eventLink)
 
-
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {;
+      console.log(isUpdating)
       const response = await fetch(
         `https://hil-aked-backend.adaptable.app/events${
           isUpdating ? `/update/${eventId}` : ""
@@ -151,7 +150,7 @@ export default function EventForm({
             value={link}
             onChange={(event) => setLink(event.target.value)}
           />
-        <button type="submit">{isUpdating ? "Update" : "Add"}</button>
+        <button onClick={handleSubmit} type="submit">{isUpdating ? "Update" : "Add"}</button>
       </form>
       </div>
     </>

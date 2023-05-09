@@ -67,7 +67,7 @@ function App() {
             </a>
             <a className="navBarLink" href="/">
               Home
-            </a>
+            </a> 
           </Navbar>
         }
         footer={
