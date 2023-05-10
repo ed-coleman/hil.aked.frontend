@@ -2,23 +2,24 @@ import React from "react";
 import { Link, Text, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Table, Button, Title, Loader } from "@mantine/core";
+import api from "../api/api";
 
 export default function PastEventsComponent() {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
   const [events, setEvents] = useState([]);
-  const fetchEvents = async () => {
-    try {
-      const response = await fetch(
-        "https://hil-aked-backend.adaptable.app/events"
-      );
-      const parsed = await response.json();
-      setEvents(parsed);
-      setIsLoading(false);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  
+  const fetchEvents = () => {
+    api.get('/events')
+    .then ((response) => {
+      console.log(response.data)
+      setEvents(response.data)
+      setIsLoading(false)
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+  }
 
   useEffect(() => {
     fetchEvents();

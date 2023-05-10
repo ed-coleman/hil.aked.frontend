@@ -3,7 +3,11 @@
 import React from "react";
 import { useState, useEffect, useContext } from "react";
 import axios from "axios";
+import api from "../api/api";
+
+
 const API_URL = "https://hil-aked-backend.adaptable.app";
+
 
 const AuthContext = React.createContext();
 
@@ -27,8 +31,8 @@ const authenticateUser = () => {
   if (storedToken) {
     // We must send the JWT token in the request's "Authorization" Headers
     
-    axios.get(
-      `${API_URL}/verify`, 
+    api.get(
+      `/verify`, 
       { headers: { Authorization: `Bearer ${storedToken}`} }
     )
     .then((response) => {
@@ -59,9 +63,6 @@ const authenticateUser = () => {
 useEffect(() => { 
   authenticateUser()
 }, []);
-
-
-
 
 
   return (
