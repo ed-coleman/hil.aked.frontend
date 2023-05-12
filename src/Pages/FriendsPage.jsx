@@ -153,7 +153,7 @@ export default function FriendsPage() {
       <Paper id="bookBlurb" className="bio" radius="sm" p="xl">
         <br></br>
         <Text>
-          Friends of Israel: the Backlash against Palestine Solidarity provides
+          <span>Friends of Israel: the Backlash against Palestine Solidarity</span> provides
           a forensically researched account of the activities of Israel's
           advocates in Britain, showing how they contribute to maintaining
           Israeli apartheid. The book traces the history and changing fortunes
@@ -167,7 +167,7 @@ export default function FriendsPage() {
           supporters of the erstwhile apartheid regime in South Africa.
           <br></br>
           <br></br>
-          Bydemystifying the actors involved in the Zionist movement, the book
+          By demystifying the actors involved in the Zionist movement, the book
           provides an anti-racist analysis of the pro-Israel lobby which
           robustly rebuffs anti-Semitic conspiracies. Sensitively and accessibly
           written, it emphasises the complicity of British actors - both those

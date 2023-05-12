@@ -85,6 +85,8 @@ export default function HomePage() {
               src="/images/HeardinLondon_Hil-104.jpg"
               alt="Random image"
             />
+            <br></br>
+            <Text>Photograph by: @HeardinLondon</Text>
           </Grid.Col>
         </Grid>
       </Paper>
