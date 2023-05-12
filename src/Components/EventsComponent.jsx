@@ -24,11 +24,6 @@ export default function EventsComponent() {
       console.log(error)
     })
   }
-  
-  
-  
-  
-  
 
   useEffect(() => {
     fetchEvents();
