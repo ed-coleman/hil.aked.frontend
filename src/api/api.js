@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const api = axios.create({ baseURL: "http://localhost:5000"})
+const api = axios.create({ baseURL: "https://hil-aked-backend.adaptable.app"})
 
 api.interceptors.request.use(
     async(config) => {
