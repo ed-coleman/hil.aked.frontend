@@ -6,7 +6,7 @@ export default function HomePage() {
   return (
     <div className="homeShell">
       <div className="sectionOne">
-        <Title className="header" align="left">
+        <Title className="header">
           Friends of Israel: The Backlash against Palestine Solidarity
         </Title>
         <Paper className="bio" radius="lg" p="xl">
@@ -59,7 +59,7 @@ export default function HomePage() {
         </Paper>
       </div>
       <br></br>
-      <Title align="left" className="header">
+      <Title className="header">
         Bio
       </Title>
       <Paper className="bio" radius="lg" p="xl">
@@ -96,7 +96,7 @@ export default function HomePage() {
       <div className="badgeContainer">
         <Paper id="availableNowBadge" radius="lg" shadow="sm" p="lg">
           <a className="badgeLink" href="/events">
-            <Title order={3}>More Events</Title>
+            <h2>More Events</h2>
           </a>
         </Paper>
       </div>
