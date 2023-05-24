@@ -59,7 +59,9 @@ export default function HomePage() {
         </Paper>
       </div>
       <br></br>
-      <h2>Bio</h2>
+      <Title className="header">
+        Bio
+      </Title>
       <Paper className="bio" radius="lg" p="xl">
         <Grid justify="center" align="center" gutter="xl">
           <Grid.Col md={6} lg={6}>
@@ -94,7 +96,7 @@ export default function HomePage() {
       <div className="badgeContainer">
         <Paper id="availableNowBadge" radius="lg" shadow="sm" p="lg">
           <a className="badgeLink" href="/events">
-            <h2>More Events</h2>
+            <Title order={3}>More Events</Title>
           </a>
         </Paper>
       </div>
