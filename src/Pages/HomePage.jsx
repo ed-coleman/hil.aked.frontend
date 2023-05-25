@@ -6,9 +6,9 @@ export default function HomePage() {
   return (
     <div className="homeShell">
       <div className="sectionOne">
-        <Title className="header" align="left">
+        <a className="header"><Title className="header" align="left">
           Friends of Israel: The Backlash against Palestine Solidarity
-        </Title>
+        </Title></a>
         <Paper className="bio" radius="lg" p="xl">
           <Grid justify="center" align-content="center" gutter="xl">
             <Grid.Col sm={9} md={6} lg={4}>

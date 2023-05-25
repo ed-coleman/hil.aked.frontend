@@ -77,6 +77,11 @@
   font-weight: 100;
   margin-top: 70px;
   margin-bottom: 70px;
+  color: black
+}
+
+.header :hover {
+  color: black
 }
 
 .bookCard {
