@@ -32,9 +32,7 @@ function App() {
     <MantineProvider
       theme={{
         fontFamily: "Raleway, sans-serif",
-        headings: {
-          fontFamily: "Raleway, sans-serif",
-        },
+        headings: "Raleway, sans-serif",
       }}
     >
       <AppShell

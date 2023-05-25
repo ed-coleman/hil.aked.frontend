@@ -6,7 +6,7 @@ export default function HomePage() {
   return (
     <div className="homeShell">
       <div className="sectionOne">
-        <Title className="header">
+        <Title className="header" align="left">
           Friends of Israel: The Backlash against Palestine Solidarity
         </Title>
         <Paper className="bio" radius="lg" p="xl">
@@ -59,7 +59,7 @@ export default function HomePage() {
         </Paper>
       </div>
       <br></br>
-      <Title className="header">
+      <Title align="left" className="header">
         Bio
       </Title>
       <Paper className="bio" radius="lg" p="xl">
