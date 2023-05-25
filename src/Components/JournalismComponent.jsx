@@ -67,7 +67,7 @@ export default function JournalismComponent() {
   return ( isRowBased ? (
     <>
       <br></br>
-      <Title>Journalism / Investigations / Op-eds</Title>
+      <a className="header"><Title>Journalism / Investigations / Op-eds</Title></a>
       <br></br>
       <br></br>
       <br></br>
@@ -84,7 +84,7 @@ export default function JournalismComponent() {
   ) : (
     <>
       <br></br>
-      <Title>Journalism / Investigations / Op-ed</Title>
+      <a className="header"><Title>Journalism / Investigations / Op-ed</Title></a>
       <br></br>
       <br></br>
       <br></br>

@@ -115,11 +115,11 @@ export default function EventsComponent() {
       <Loader color="dark" size="xl" variant="dots" />
     </>
   ) : events.length === 0 ? (
-    <Title order={2}>No upcoming events at the moment </Title>
+    <a className="header"><Title order={2}>No upcoming events at the moment </Title></a>
   ) : isLoggedIn ? (
     <>
       <br></br>
-      <Title>Upcoming Events</Title>
+      <a className="header"><Title>Upcoming Events</Title></a>
       <br></br>
       <br></br>
       <div className="table">
@@ -135,7 +135,7 @@ export default function EventsComponent() {
   ) : (
     <>
       <br></br>
-      <Title>Upcoming Events</Title>
+      <a className="header"><Title>Upcoming Events</Title></a>
       <br></br>
       <br></br>
       <div className="table">

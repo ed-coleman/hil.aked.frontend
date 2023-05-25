@@ -59,9 +59,9 @@ export default function HomePage() {
         </Paper>
       </div>
       <br></br>
-      <Title align="left" className="header">
+      <a className="header"><Title align="left" className="header">
         Bio
-      </Title>
+      </Title></a>
       <Paper className="bio" radius="lg" p="xl">
         <Grid justify="center" align="center" gutter="xl">
           <Grid.Col md={6} lg={6}>

@@ -77,7 +77,7 @@ export default function ReportsComponent() {
 
   return isRowBased ? (
     <>
-      <Title>Reports / Chapters / Journal Articles </Title>
+      <a className="header"><Title>Reports / Chapters / Journal Articles </Title></a>
       <br></br>
       <br></br>
       <br></br>
@@ -93,7 +93,7 @@ export default function ReportsComponent() {
     </>
   ) : (
     <>
-      <Title>Reports / Chapters / Journal Articles </Title>
+      <a className="header"><Title>Reports / Chapters / Journal Articles </Title></a>
       <br></br>
       <br></br>
       <br></br>

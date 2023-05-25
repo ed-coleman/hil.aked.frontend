@@ -102,7 +102,7 @@ pastEvents.sort((a,b) => a.year - b.year)
     <>
       <br></br>
       <br></br>
-      <Title>Past Events</Title>
+      <a className="header"><Title>Past Events</Title></a>
       <br></br>
       <br></br>
       <div className="table">

@@ -9,9 +9,9 @@ export default function FriendsPage() {
 
   return (
     <div className="friendShell">
-      <Title className="header">
+      <a className="header"><Title className="header">
         Friends of Israel: The Backlash against Palestine Solidarity
-      </Title>
+      </Title></a>
 
       <Carousel
         id="carousel"
@@ -185,6 +185,7 @@ export default function FriendsPage() {
               >
                 <Title order={3}>Order now</Title>
               </a>
+              <br></br>
             </Paper>
           </div>
         </Text>

@@ -54,7 +54,7 @@ export default function ContactPage() {
 
   return (
     <div className="contact">
-      <Title>Contact</Title>
+      <a className="header"><Title>Contact</Title></a>
       <p className="status-message">{statusMessage}</p>
       {errors.user_name && errors.user_name.type === "required" && (
         <div role="alert">
