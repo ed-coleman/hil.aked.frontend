@@ -87,7 +87,7 @@ function App() {
                   mr="xl"
                 />
               </MediaQuery>
-              <Title>Hil Aked</Title>
+              <a className='header'><Title>Hil Aked</Title></a>
             </div>
           </Header>
         }
